@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <!-- Bootstrap読込み -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'storage/style.css' %}">
+        <!-- Bootstrap読込み -->
+        
+        <!-- 表示全体を中央に揃える -->
+        <style>
+        body {padding-top: 50px; font-family:"ヒラギノ角ゴシック ProN";}
+
+        </style>
+
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-light bg-info fixed-top">
+                <span class="navbar-brand mb-0 h1">在庫管理アプリ</span>
+                <a class="nav-item nav-link text-light" href='{% url "dataModel" %}'>TOP</a>
+                <a class="nav-item nav-link text-light" href='{% url "allData" %}'>All Stock</a>
+                <a class="nav-item nav-link text-light" href='{% url "showCreateForm" %}'>Register</a>
+                <form  class="form-inline" action='{% url "dataMatch" %}' method="get">
+                        <input class="form-control mr-2" name="query" value="{{ request.GET.query }}" type="text">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </nav>
+
+    </head>
+ 
+    <!-- ボディー -->
+    <body>
+        
+        <div class='container'>
+            {% block app %}
+            {% endblock %}
+        </div>
+    </body>
+ 
+ 
+</html>

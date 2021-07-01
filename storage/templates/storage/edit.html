@@ -1,0 +1,27 @@
+{% extends './base.html' %}
+{% block app %}
+<h4 class="mt-4 border-bottom">修正</h4>
+<br>
+<form action='{% url "dataEdit" data.id %}' method='post' class='form'>
+    <!-- ユーザー登録フォームを表示 -->
+    {% csrf_token %}
+
+    <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>名前</td>
+                    <td>個数</td>
+                    <td>賞味期限</td>
+                </tr>
+                <tr>
+                    <td>{{foodForm.name}}</td>
+                    <td>{{foodForm.num}}</td>
+                    <td>{{foodForm.term}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    <button type='submit' class='btn btn-info'>登録</button>
+    <a href='{% url "dataModel" %}' class='btn btn-secondary'>戻る</a>
+</form>
+{% endblock %}

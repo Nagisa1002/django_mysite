@@ -1,0 +1,33 @@
+{% extends './base.html' %}
+{% block app %}
+<h4 class="mt-4 border-bottom">在庫一覧</h4>
+
+{% include "pagination.html" %}
+<br>
+<table class="table table-striped table table-bordered ">
+    <thead align="center">
+        <tr>
+            <th>名前</th>
+            <th>個数</th>
+            <th>賞味期限</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody align="center">
+    <!-- count件(行)数分をループ -->
+    {% for  obj in data %}
+    <tr>
+    <!-- 4列分ユーザ情報を出力 -->
+        <td>{{obj.name}}</td>
+        <td>{{obj.num}}</td>
+        <td>{{obj.term}}</td>
+        <td>
+            <a href='{% url "dataDel" data_id=obj.id %}' class="btn btn-outline-danger">削除</a>
+            <a href='{% url "dataEdit" data_id=obj.id %}' class="btn btn-outline-info">修正</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a href='{% url "dataModel" %}' class='btn btn-secondary'>戻る</a>
+{% endblock %}
