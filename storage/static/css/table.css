@@ -1,0 +1,51 @@
+#view_table{
+    text-align: center;
+}
+
+#view_table > tbody >tr >td{
+    height:2em;
+    max-height:2em;
+    vertical-align: middle; 
+}
+
+#table_title{
+    width:150px;
+}
+#table_num{
+    width:150px;
+}
+
+#table_term{
+    width:150px;
+}
+
+#table_operation{
+    width:150px;
+}
+
+#read_more{
+    text-align:right;
+    vertical-align: bottom; 
+}
+#read_more > a{
+    color:#17a2b8;
+}
+
+#table_memo_contents{
+    overflow: hidden;
+    height: 1.2em ;/* 2em（行）x line-heightの1.8 */
+    line-height: 1.2;
+}
+
+
+
+/*operation*/
+#delete_confirm{
+    width:60px;
+
+}
+
+.eidt_confirm{
+    width:60px;
+}
+/*end operation*/

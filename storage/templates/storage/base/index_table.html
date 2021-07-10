@@ -1,0 +1,27 @@
+<table id="view_table" class="table table-striped table table-bordered">
+    <thead>
+        <tr>
+            <th id="table_title">Title</th>
+            <th id="table_num">Num</th>
+            <th id="table_term">Term</th>
+            <th id="table_detail">Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for data in data_list %}
+        {% if data.is_today %}
+        <tr>
+            <td>{{data.name}}</td>
+            <td>{{data.num}}</td>
+            <td>{{data.term}}</td>
+            <td>
+                <p id="table_memo_contents">{{data.memo}}</p>
+                <div id="read_more">
+                    <a href="{% url 'detail_data' data_id=data.id %}">Read More</a>
+                </div>
+            </td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>

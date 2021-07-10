@@ -1,0 +1,11 @@
+gcc
+gifsicle
+glfw
+heroku/brew/heroku
+mysql@5.7
+nginx
+portaudio
+postgresql
+pyside
+python@3.8
+sdl2_image

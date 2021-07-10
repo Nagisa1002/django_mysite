@@ -2,26 +2,18 @@
 {% block app %}
 <h4 class="mt-4 border-bottom">修正</h4>
 <br>
-<form action='{% url "dataEdit" data.id %}' method='post' class='form'>
+<form action='{% url "edit_data"　data_id %}' method='post' class='form'>
     <!-- ユーザー登録フォームを表示 -->
     {% csrf_token %}
-
-    <table class="table table-borderless">
-            <tbody>
-                <tr>
-                    <td>名前</td>
-                    <td>個数</td>
-                    <td>賞味期限</td>
-                </tr>
-                <tr>
-                    <td>{{foodForm.name}}</td>
-                    <td>{{foodForm.num}}</td>
-                    <td>{{foodForm.term}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-    <button type='submit' class='btn btn-info'>登録</button>
-    <a href='{% url "dataModel" %}' class='btn btn-secondary'>戻る</a>
+    {% include './base/form_table.html' %}
 </form>
+
 {% endblock %}
+
+{% block js%}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap_datepicker_plus/js/datepicker-widget.js"></script> 
+{%endblock%}

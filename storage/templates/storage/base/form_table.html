@@ -1,0 +1,36 @@
+    <table id="form_table">
+        <tbody>
+            <tr>
+                <td class="form_box"> 
+                <label for="inputPassword4">Title</label>
+                <br>
+                {{foodForm.name}}
+                </td>
+                <td class="form_box">
+                    <label for="inputPassword4">Num</label>
+                    <br>
+                    {{foodForm.num}}
+                </td>
+                <td class="form_box">
+                    <label for="inputPassword4">Term</label>
+                    <br>
+                    {{foodForm.term}}
+                </td>
+            </tr>
+            <tr>
+                <td COLSPAN="3">
+                <br>
+                <label for="inputPassword4">Detail</label>
+                <br>
+                {{foodForm.memo}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                <button type='submit' class='btn btn-info form_confirm'>REGISTER</button>
+                <a href='{% url "index_view" %}' class='btn btn-secondary form_confirm'>BACK</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>

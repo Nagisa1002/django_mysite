@@ -1,0 +1,11 @@
+{% extends './base.html' %}
+{% block app %}
+<h4 class="mt-4 border-bottom">"{{data.name}}"の詳細</h4>
+<br>
+<div id="memo_view">
+    <p>{{data.memo}}</p>
+</div>
+
+<br>
+<a href='{% url "all_data_view" %}' class='btn btn-secondary'>BACK</a>
+{% endblock app%}

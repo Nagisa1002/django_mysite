@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+{% block app %}
+<h4 class="mt-4 border-bottom">賞味期限が近いもの一覧</h4>
+<br>
+
+<table class="table table-striped table table-bordered ">
+        <thead align="center">
+            <tr>
+                <th>名前</th>
+                <th>個数</th>
+                <th>賞味期限</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+        {% for  data in data_list %}
+            {% if data.is_today %}
+                <tr>
+                    <td>{{data.name}}</td>
+                    <td>{{data.num}}</td>
+                    <td>{{data.term}}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% include './base/nav.html' %}
+{% endblock %}
+
+
+
