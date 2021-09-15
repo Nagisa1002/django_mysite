@@ -1,7 +1,0 @@
-{% extends './base.html' %}
-{% block app %}
-<h4 class="mt-4 border-bottom">"{{name}}"の検索結果</h4>
-{% include './base/table.html' %}
-{% include './base/nav.html' %}
-<a href='{% url "index_view" %}' class='btn btn-secondary'>戻る</a>
-{% endblock %}
